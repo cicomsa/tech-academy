@@ -40,11 +40,15 @@ describe('fizzBuzz', () => {
 function fizzBuzzList(numbers: number[]) {
     return numbers.map((value) => {
         return fizzBuzz(value);
-    }).join();
+    }).join("");
 }
 
 describe('fizzBuzzList', () => {
     it('should return Fizz for [3]', () => {
         expect(fizzBuzzList([3])).toBe('Fizz');
+    });
+
+    it('should return FizzFizzFizz for [3,6,9]', () => {
+        expect(fizzBuzzList([3,6,9])).toBe('FizzFizzFizz');
     })
 });
