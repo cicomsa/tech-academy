@@ -1,6 +1,12 @@
+const fizzBuzz = (number: number) : string => {
+    return 'Fizz'
+}
+
+
 describe('fizzBuzz', () => {
-    it('should work', () => {
-        const a: string = '123';
-        expect(a).toBe('123');
+    it('should return "Fizz" if number is 3', () => {
+        const number: number = 3;
+        const result: string = 'Fizz'
+        expect(fizzBuzz(number)).toBe(result);
     });
 });
