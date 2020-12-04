@@ -1,13 +1,17 @@
-const fizzBuzz = (number: number) : string => {
-    if (number === 15) {
+const fizzBuzz = (value: number) : string => {
+    if (value % 15 === 0) {
         return "FizzBuzz";
     }
 
-    if (number % 5 === 0) {
+    if (value % 5 === 0) {
         return "Buzz";
     }
 
-    return 'Fizz';
+    if (value % 3 === 0) {
+        return "Fizz";
+    }
+
+    return `${value}`;
 }
 
 
@@ -22,9 +26,13 @@ describe('fizzBuzz', () => {
         expect(fizzBuzz(value)).toBe(result);
     });
 
-    it('should return "FizzBuzz" if number is 15', () => {
-        const number: number = 15;
+    it.each([15, 30])('should return "Fizz" if modular of 15 is 0', (value: number) => {
         const result: string = 'FizzBuzz'
-        expect(fizzBuzz(number)).toBe(result);
+        expect(fizzBuzz(value)).toBe(result);
+    });
+
+    it.each([1, 2])('should return %p if modular of 3 or 5 is not 0', (value: number) => {
+        const result: string = `${value}`
+        expect(fizzBuzz(value)).toBe(result);
     });
 });
