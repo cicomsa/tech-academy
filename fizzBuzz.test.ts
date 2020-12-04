@@ -36,3 +36,15 @@ describe('fizzBuzz', () => {
         expect(fizzBuzz(value)).toBe(result);
     });
 });
+
+function fizzBuzzList(numbers: number[]) {
+    return numbers.map((value) => {
+        return fizzBuzz(value);
+    }).join();
+}
+
+describe('fizzBuzzList', () => {
+    it('should return Fizz for [3]', () => {
+        expect(fizzBuzzList([3])).toBe('Fizz');
+    })
+});
