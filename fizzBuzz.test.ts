@@ -1,5 +1,6 @@
 describe('fizzBuzz', () => {
     it('should work', () => {
-        expect(1).toBe(1);
+        const a: string = '123';
+        expect(a).toBe('123');
     });
 });
